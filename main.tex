@@ -1,0 +1,156 @@
+% ============================================================
+%  POSTER DE CONFÉRENCE Set4MOST
+% ============================================================
+
+\documentclass[final]{beamer}
+
+\usepackage[
+  orientation=portrait,
+  size=a0,
+  scale=1.35
+]{beamerposter}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+
+% ── Couleurs ────────────────────────────────────────────────
+\definecolor{Rouge}    {HTML}{C0272D}
+\definecolor{RougeF}   {HTML}{8B0000}
+\definecolor{GrisClair}{HTML}{F5F5F5}
+\definecolor{Texte}    {HTML}{1A1A1A}
+
+% ── Thème beamer ────────────────────────────────────────────
+\usetheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{block title}{fg=white,  bg=Rouge}
+\setbeamercolor{block body} {fg=Texte,  bg=GrisClair}
+\setbeamerfont{block title}{size=\large, series=\bfseries}
+\setbeamerfont{block body} {size=\normalsize}
+
+% ── Boîte résultat clé ──────────────────────────────────────
+\newcommand{\keybox}[1]{%
+  \begin{tcolorbox}[
+    colback=Rouge!10, colframe=Rouge,
+    arc=3pt, boxrule=1.5pt,
+    left=8pt, right=8pt, top=5pt, bottom=5pt
+  ]
+  \centering\large\bfseries #1
+  \end{tcolorbox}}
+
+% ============================================================
+\begin{document}
+\begin{frame}[t]{}
+
+% ── BANDEAU TITRE ────────────────────────────────────────────
+\begin{columns}[c]
+
+  \begin{column}{0.15\linewidth}
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/logoCEA.png}
+  \end{column}
+
+  \begin{column}{0.68\linewidth}
+    \centering
+    {\color{Rouge}\bfseries\Huge
+	Outdoor Navigation in unknown off-road envirronement using Interval Analysis}\\[0.6cm]
+    {\large
+      Celian \textsc{Daligault}$^1$$^2$,
+      Eric \textsc{Lucet}$^1$,
+      Sebastien \textsc{Lahaye}$^2$},
+	  Sebastien \textsc{Lagrange}$^2$,
+	  Remy \textsc{Guyonneau}$^2$\\[0.35cm]
+    {\normalsize\color{gray}
+      $^1$nano-innov, CEA — 2 Boulevard Thomas Gobert 91120 PALAISEAU France\quad
+      $^2$LARIS, Universite Angers — 62 avenue Notre-Dame-du-Lac 49000 Angers France}\\[0.2cm]
+    {\small\color{gray} celian.daligault@cea.fr}
+  \end{column}
+
+  \begin{column}{0.15\linewidth}
+    \centering
+    \includegraphics[width=0.6\linewidth]{images/logoLARIS.png}
+  \end{column}
+
+\end{columns}
+
+% ── Bandeaux rouges séparateurs ──────────────────────────────
+\vspace{0.5cm}
+\noindent\textcolor{Rouge}{\rule{\linewidth}{6pt}}\\[-2pt]
+\noindent\textcolor{RougeF}{\rule{\linewidth}{2pt}}
+\vspace{0.7cm}
+
+
+\begin{columns}[T]
+
+  % ── Left column (45 %) ───────────────────────────────
+  \begin{column}{0.45\linewidth}
+
+    \begin{block}{Introduction}
+      Contexte général et justification de la question de recherche.
+      Lacune identifiée dans la littérature.\\[0.5em]
+    \end{block}
+
+    \vspace{0.5cm}
+
+	\begin{block}{A robust special sensor: The micro-wave radar}
+
+      \textbf{Résultat principal}\\
+      Description synthétique en une phrase.
+
+      \vspace{0.8em}
+      \begin{center}
+        \includegraphics[width=0.92\linewidth]{images/Generalshema}\\[4pt]
+        {\small\itshape Figure 1. Overview of the radar integration in SLAM.}
+      \end{center}
+
+    \end{block}
+
+  \end{column}
+
+
+  % ── right column (45 %) ───────────────────────────────
+  \begin{column}{0.45\linewidth}
+
+    % Bloc conclusion avec fond rouge léger
+    \begin{tcolorbox}[
+      title={\large\bfseries\color{white} Research tracks},
+      colbacktitle=Rouge,
+      colback=Rouge!12,
+      colframe=Rouge,
+      arc=3pt, boxrule=1pt,
+      left=8pt, right=8pt, top=6pt, bottom=6pt
+    ]
+      Réponse directe à la question de recherche.\\[0.4em]
+      Implication principale (clinique ou théorique).\\[0.4em]
+      Perspective à court terme.
+    \end{tcolorbox}
+
+    \vspace{0.5cm}
+
+    \begin{block}{Bibliography}
+      {\footnotesize
+      [1] Auteur et al. \textit{Journal}. Année;Vol:Pages.\\[3pt]
+      [2] Auteur et al. \textit{Journal}. Année;Vol:Pages.\\[3pt]
+      [3] Auteur et al. \textit{Journal}. Année;Vol:Pages.
+      }
+    \end{block}
+
+    \vspace{0.5cm}
+
+  \end{column}
+
+\end{columns}
+
+% ── Bandeaux rouges bas ──────────────────────────────────────
+\vspace{0.7cm}
+\noindent\textcolor{RougeF}{\rule{\linewidth}{2pt}}\\[-2pt]
+\noindent\textcolor{Rouge}{\rule{\linewidth}{6pt}}
+
+\end{frame}
+\end{document}
