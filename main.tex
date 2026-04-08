@@ -12,6 +12,7 @@
  
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+usepackage{lmodern}
 \usepackage[french]{babel}
 \usepackage{graphicx}
 \usepackage{amsmath}
@@ -22,6 +23,7 @@
 % ── Bibliography ────────────────────────────────────────────────
 \usepackage[backend=biber, style=numeric]{biblatex}
 \addbibresource{bibliography.bib}
+\AtBeginBibliography{\small}
 
 % ── Colors ────────────────────────────────────────────────
 \definecolor{Rouge}    {HTML}{C0272D}
@@ -55,12 +57,17 @@
 % ── Title head ────────────────────────────────────────────
 \begin{columns}[c]
 
-  \begin{column}{0.15\linewidth}
+  \begin{column}{0.075\linewidth}
     \centering
-    \includegraphics[width=0.6\linewidth]{images/logoCEA.png}
+    \includegraphics[width=1\linewidth]{images/logoCEA.png}
   \end{column}
 
-  \begin{column}{0.68\linewidth}
+  \begin{column}{0.075\linewidth}
+    \centering
+    \includegraphics[width=1\linewidth]{images/logoLARIS.png}
+  \end{column}
+
+  \begin{column}{0.5\linewidth}
     \centering
     {\color{Rouge}\bfseries\Huge
 	Navigation in unknown outdoor off-road envirronement using Interval Analysis}\\[0.6cm]
@@ -74,12 +81,11 @@
       $^1$LARIS, Universite Angers — 62 avenue Notre-Dame-du-Lac 49000 Angers France\quad
 	  \newline
       $^2$nano-innov, CEA — 2 Boulevard Thomas Gobert 91120 PALAISEAU France}\\[0.2cm]
-    {\small\color{gray} celian.daligault@cea.fr}
   \end{column}
 
   \begin{column}{0.15\linewidth}
     \centering
-    \includegraphics[width=0.6\linewidth]{images/logoLARIS.png}
+    \includegraphics[width=0.7\linewidth]{images/logoSet4MOST.png}
   \end{column}
 
 \end{columns}
@@ -88,27 +94,26 @@
 \vspace{0.5cm}
 \noindent\textcolor{Rouge}{\rule{\linewidth}{6pt}}\\[-2pt]
 \noindent\textcolor{RougeF}{\rule{\linewidth}{2pt}}
-\vspace{0.7cm}
+% \vspace{0.1cm}
 
 
 \begin{columns}[T]
 
-  % ── Left column (55 %) ───────────────────────────────
-  \begin{column}{0.55\linewidth}
+  % ── Left column ───────────────────────────────
+  \begin{column}{0.57\linewidth}
 
     \begin{block}{Context}
-	Outdoor unknown off-road navigations stakes in mobile robotics application are multiples
-	\newline
-	In fact, Firstly, the unkown nature of the enviroonmeent necessitate to preform a full simulatuaous localisation and mapping (SLAM) whitout or with the least possible a priori hypothesis which is a well known and classical problem.
-	\newline
-	Then, the off-road specifity introduces many additional important information neccessary to know such as ground geometry, its nature (e.g. slipping ground) but also the presence and nature of dynamic objects to adjust the cartography models and potentially to avoid it when path generation is produced.
-	\newline
-	In addition, when a robot evolve outdoor, it face evolutionarry envirronement condition like a change in the luminosity and wheater conditions. This change in the envirronement does not always allow to use continusously the same sensors. A choice in the sensors but also multisensor fusion is consequently essential.
-	\newline
-	Moreover, the noisy nature of aquistion sensors must be a the subject of careful consideration to bring robust information from which path generation can be based on. The context of the described envirronement can easely correspond to applications such as construction or farming sites when vehicules evolve jointly with human operators, application when the security is the top priority. This last constraint justify how the use of the interval analysis should be considered.
-	\newline
-	Finally, a real application would necessitate real-time computation which means finding methods that are not too much costly in commputational load and memory.\\[0.5em]
-    \end{block}
+	\textbf{Outdoor unknown off-road navigations stakes in mobile robotics application are multiples:}
+
+  \vspace{0.5cm}
+
+  \begin{itemize}
+    \item 	Firstly, the unkown nature of the enviroonmeent necessitate to preform a full simulatuaous localisation and mapping (SLAM) whitout or with the least possible a priori hypothesis which is a well known and classical problem.
+    \item 	The off-road specifity introduces many additional important information neccessary to know such as ground geometry, its nature (e.g. slipping ground) but also the presence and nature of dynamic objects to adjust the cartography models and potentially to avoid it when path generation is produced.
+    \item In addition, when a robot evolve outdoor, it face evolutionarry envirronement condition like a change in the luminosity and wheater conditions. This change in the envirronement does not always allow to use continusously the same sensors. A choice in the sensors but also multisensor fusion is consequently essential.
+    \item Moreover, the noisy nature of aquistion sensors must be a the subject of careful consideration to bring robust information from which path generation can be based on. The context of the described envirronement can easely correspond to applications such as construction or farming sites when vehicules evolve jointly with human operators, application when the security is the top priority. This last constraint justify how the use of the interval analysis should be considered.
+  \end{itemize}
+  \end{block}
 
     \vspace{0.5cm}
 
@@ -149,26 +154,39 @@
     So if the RADAR appears to be an cheap and robust sensors for hostile envirronement conditions it is complicated to use it whitout signal processing and/or whitout joining other sensors. ~\cite{radarsurvey}
     \end{block}
 
-    \vspace{0.5cm}
-
-	\begin{block}{The visibility problem}
-      {
-		One of the main issue of range based sensor is that they are not capable to see behind a target which makes it comlicated a shape of the observed obstacle whitout making assumptions on its shape nature. However because the dynamic object or the measrement plateform move multiple face of the object are visible and the accumalation of this information could at the end give a conclusion on the form of the object.
-      }
-    \end{block}
+		% One of the main issue of range based sensor is that they are not capable to see behind a target which makes it comlicated to estimate the geneal pose whitout making assumptions on its shape nature. However because the dynamic object or the measrement plateform move multiple face of the object are visible and the accumalation of this information could at the end give a conclusion on the form of the object. The velocity tracking appears then to be a true stake.
 
   \end{column}
 
 
-  % ── right column (35 %) ───────────────────────────────
-  \begin{column}{0.35\linewidth}
+  % ── right column ───────────────────────────────
+  \begin{column}{0.37\linewidth}
 
 	\begin{block}{An application of the radar benefit: The dynamic tracking}
       {
-        Dynamic objects envirronement add a lot of complication to the SLAM problems, they fisrt need to be identified either to remap correctly the map that have changed but also to avoid the dynamic obstacles. The dynamic obsctacles are of two types, semi-static where the object does not change its position often (e.g. a door) and highly dynamic where the object often move (e.g. a person)
-        Classically, when range-azimuth sensors are used, dynamic object tracking is performed by comparaison of multiple frame to be able to detect semi-static and high dynamicity. 
-        \newline
-        The additional measure of Doppler Velocity allow (that is generally included in radar output) for instantanuous motion information. In fact, the radial velocity when is combined with spatial points allow to refine the velocity estimation model but also to retrieve the rotational velocity and therefore, measure rotation.~\cite{radartracking}
+        Dynamic objects envirronement need to be identified to 
+
+        \vspace{0.5cm}
+
+        \begin{itemize}
+          \item Remap correctly the map that have changed.
+          \item To avoid the dynamic obstacles.
+        \end{itemize} 
+
+        \vspace{0.5cm}
+        
+        The dynamic obsctacles are of two types:
+
+        \vspace{0.5cm}
+
+        \begin{itemize}
+          \item Semi-static where the object does not change its position often (e.g. a door).
+          \item Highly dynamic where the object often move (e.g. a person).
+        \end{itemize}
+
+        \vspace{0.5cm}
+
+        Classically, when range-azimuth sensors are used, dynamic object tracking is performed by comparaison of multiple frame to be able to detect semi-static and high dynamicity.~\cite{radartracking}
       }
     \end{block}
 
@@ -176,7 +194,16 @@
 
 	\begin{center}
 		\includegraphics[width=0.92\linewidth]{images/ICRretrieval.png}\\[4pt]
-		{\small\itshape Figure 2. ICR and angular velocity retrieval with distribution of radial velocity.}
+		{\small\itshape Figure 2. ICR and angular velocity retrieval with distribution of Doppler radial velocity.}
+	\end{center}
+
+  % \begin{equation}
+  %    y_r \cos(\theta_i) - x_r \sin(\theta_i) = y_{ICR} \cos(\theta_i) - x_{ICR} \sin(\theta_i) - v_{d_i} \cdot \omega^{-1}
+  % \end{equation}
+
+	\begin{center}
+		\includegraphics[width=0.92\linewidth]{images/projection.png}\\[4pt]
+		{\small\itshape Figure 3. Current measured point projection with ICR and angular velocity estimation.}
 	\end{center}
 
 	\vspace{0.5cm}
@@ -192,15 +219,17 @@
     ]
 
     \begin{itemize}
-      \item To use the Doppler Velocity of the Radar to map targethe turn of the object.
+      \item To use the Doppler Velocity of the Radar to map the turn of the object.
       \item To use  the shape estimation of the object to obtain conclusion on static map and dynamic obstacles uncertainities.
     \end{itemize}
     \end{tcolorbox}
 
     \vspace{0.5cm}
-
+    
     \begin{block}{Bibliography}
-      \printbibliography
+      {\fontsize{7}{9}\selectfont
+        \printbibliography
+      }
     \end{block}
 
     \vspace{0.5cm}
@@ -213,6 +242,20 @@
 \vspace{0.7cm}
 \noindent\textcolor{RougeF}{\rule{\linewidth}{2pt}}\\[-2pt]
 \noindent\textcolor{Rouge}{\rule{\linewidth}{6pt}}
+
+% ── Botom text  ────────────────────────────────────────────
+
+\vspace{0.5cm}
+\noindent\textcolor{RougeF}{\rule{\linewidth}{2pt}}\\[-2pt]
+\noindent\colorbox{Rouge}{%
+  \begin{minipage}{\linewidth}
+    \vspace{0.3cm}
+    \centering
+    {\color{white}\large\bfseries Set4MOST · Oldenburg · 20/04/2026 - 24/04/2026 - \normalsize celian.daligault@cea.fr}\\[0.2cm]
+    \vspace{0.2cm}
+  \end{minipage}%
+}
+
 
 \end{frame}
 \end{document}
