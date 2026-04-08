@@ -12,7 +12,7 @@
  
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-usepackage{lmodern}
+\usepackage{lmodern}
 \usepackage[french]{babel}
 \usepackage{graphicx}
 \usepackage{amsmath}
@@ -108,6 +108,7 @@ usepackage{lmodern}
   \vspace{0.5cm}
 
   \begin{itemize}
+    \setlength{\itemsep}{15pt}
     \item 	Firstly, the unkown nature of the enviroonmeent necessitate to preform a full simulatuaous localisation and mapping (SLAM) whitout or with the least possible a priori hypothesis which is a well known and classical problem.
     \item 	The off-road specifity introduces many additional important information neccessary to know such as ground geometry, its nature (e.g. slipping ground) but also the presence and nature of dynamic objects to adjust the cartography models and potentially to avoid it when path generation is produced.
     \item In addition, when a robot evolve outdoor, it face evolutionarry envirronement condition like a change in the luminosity and wheater conditions. This change in the envirronement does not always allow to use continusously the same sensors. A choice in the sensors but also multisensor fusion is consequently essential.
@@ -132,6 +133,7 @@ usepackage{lmodern}
     \vspace{0.5cm}
 
     \begin{itemize}
+      \setlength{\itemsep}{15pt}
       \item Is less senssible to signal attenuation in the athomsphere, allowing higher maximum range and robustness to wheather conditions such as rain or fog.
       \item Return Doppler velocity of obsctacles.
       \item Can possibily go through matter depending on the type of RADAR
@@ -145,6 +147,7 @@ usepackage{lmodern}
     \vspace{0.5cm}
     
     \begin{itemize}
+      \setlength{\itemsep}{15pt}
       \item The accuracy of detections is poor compared to the LiDAR necessiting deeper noise consideration.
       \item The spatial resolution is weak which makes it complicated to detect small detecttion for weak Radar Cross Section target (RCS) depending on shape, geometry and material.
     \end{itemize}
@@ -169,6 +172,7 @@ usepackage{lmodern}
         \vspace{0.5cm}
 
         \begin{itemize}
+          \setlength{\itemsep}{15pt}
           \item Remap correctly the map that have changed.
           \item To avoid the dynamic obstacles.
         \end{itemize} 
@@ -180,6 +184,7 @@ usepackage{lmodern}
         \vspace{0.5cm}
 
         \begin{itemize}
+          \setlength{\itemsep}{15pt}
           \item Semi-static where the object does not change its position often (e.g. a door).
           \item Highly dynamic where the object often move (e.g. a person).
         \end{itemize}
@@ -192,17 +197,19 @@ usepackage{lmodern}
 
 	\vspace{0.5cm}
 
+  \begin{equation}
+     y_r \cos(\theta_i) - x_r \sin(\theta_i) = y_{ICR} \cos(\theta_i) - x_{ICR} \sin(\theta_i) - v_{d_i} \cdot \omega^{-1}
+  \end{equation}
+
+  \vspace{0.5cm}
+
 	\begin{center}
-		\includegraphics[width=0.92\linewidth]{images/ICRretrieval.png}\\[4pt]
+		\includegraphics[width=0.72\linewidth]{images/ICRretrieval.png}\\[4pt]
 		{\small\itshape Figure 2. ICR and angular velocity retrieval with distribution of Doppler radial velocity.}
 	\end{center}
 
-  % \begin{equation}
-  %    y_r \cos(\theta_i) - x_r \sin(\theta_i) = y_{ICR} \cos(\theta_i) - x_{ICR} \sin(\theta_i) - v_{d_i} \cdot \omega^{-1}
-  % \end{equation}
-
 	\begin{center}
-		\includegraphics[width=0.92\linewidth]{images/projection.png}\\[4pt]
+		\includegraphics[width=0.72\linewidth]{images/projection.png}\\[4pt]
 		{\small\itshape Figure 3. Current measured point projection with ICR and angular velocity estimation.}
 	\end{center}
 
@@ -219,6 +226,7 @@ usepackage{lmodern}
     ]
 
     \begin{itemize}
+      \setlength{\itemsep}{15pt}
       \item To use the Doppler Velocity of the Radar to map the turn of the object.
       \item To use  the shape estimation of the object to obtain conclusion on static map and dynamic obstacles uncertainities.
     \end{itemize}
