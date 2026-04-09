@@ -21,7 +21,7 @@
 \usepackage{booktabs}
 
 % ── Bibliography ────────────────────────────────────────────────
-\usepackage[backend=biber, style=numeric]{biblatex}
+\usepackage[backend=biber, sorting=none, style=numeric]{biblatex}
 \addbibresource{bibliography.bib}
 \AtBeginBibliography{\small}
 
@@ -111,7 +111,7 @@
     \setlength{\itemsep}{30pt}
     \item 	The need to specify \textbf{ground geometry}, its nature (e.g., slipping ground), but also the presence and nature of \textbf{dynamic objects} to adjust the cartography models and potentially to avoid it when path generation is produced.
     \item The \textbf{change in the environment} (change in luminosity, rain, fog, etc) does not always allow the use of the same sensors continusously. A choice in the sensors but also multisensor fusion, is consequently essential.
-    \item The \textbf{noisy nature of acquisition sensors} must be a the subject of careful consideration to bring robust information (possibly guarenteed using Interval Analysis) on which path generation can be based. The context of the described environment corresponds to applications such as construction or farming sites when vehicles evolve jointly with human operators, applications when the security is the top priority.
+    \item The \textbf{noisy nature of acquisition sensors} must be a the subject of careful consideration to bring robust information (possibly guarenteed using Interval Analysis ~\cite{interval}) on which path generation can be based. The context of the described environment corresponds to applications such as construction or farming sites when vehicles evolve jointly with human operators, applications when the security is the top priority.
   \end{itemize}
   \end{block}
 
@@ -219,12 +219,12 @@
   \vspace{0.5cm}
 
 	\begin{center}
-		\includegraphics[width=0.73\linewidth]{images/ICRretrieval.png}\\[4pt]
+		\includegraphics[width=0.685\linewidth]{images/ICRretrieval.png}\\[4pt]
 		{\small\itshape Figure 3. ICR and angular velocity retrieval with distribution of Doppler radial velocity.}
 	\end{center}
 
 	\begin{center}
-		\includegraphics[width=0.73\linewidth]{images/projection.png}\\[4pt]
+		\includegraphics[width=0.685\linewidth]{images/projection.png}\\[4pt]
 		{\small\itshape Figure 4. Current measured point projection with ICR and angular velocity estimation.}
 	\end{center}
 

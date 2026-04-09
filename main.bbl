@@ -18,7 +18,33 @@
 
 
 \refsection{0}
-  \datalist[entry]{nty/global//global/global}
+  \datalist[entry]{none/global//global/global}
+    \entry{interval}{article}{}
+      \name{author}{1}{}{%
+        {{hash=1c92dbf1133a7a37ab92823c5d01a081}{%
+           family={JAULIN},
+           familyi={J\bibinitperiod},
+           given={Luc},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{1c92dbf1133a7a37ab92823c5d01a081}
+      \strng{fullhash}{1c92dbf1133a7a37ab92823c5d01a081}
+      \strng{bibnamehash}{1c92dbf1133a7a37ab92823c5d01a081}
+      \strng{authorbibnamehash}{1c92dbf1133a7a37ab92823c5d01a081}
+      \strng{authornamehash}{1c92dbf1133a7a37ab92823c5d01a081}
+      \strng{authorfullhash}{1c92dbf1133a7a37ab92823c5d01a081}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{EEE TRANSACTIONS ON ROBOTICS}
+      \field{number}{5}
+      \field{title}{Range-Only SLAM With Occupancy Maps: A Set-Membership Approach}
+      \field{volume}{27}
+      \field{year}{2011}
+      \field{pages}{1004\bibrangedash 1010}
+      \range{pages}{7}
+    \endentry
     \entry{radarsurvey}{article}{}
       \name{author}{5}{}{%
         {{hash=bdcde1ae39604cf4133da69eee243465}{%
@@ -53,8 +79,8 @@
       \strng{authorbibnamehash}{6c9cced81a9b29e883359f757f95e2ca}
       \strng{authornamehash}{6c9cced81a9b29e883359f757f95e2ca}
       \strng{authorfullhash}{bcb48c468de09422501605eb0cdf76e8}
-      \field{sortinit}{H}
-      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE TRANSACTIONS ON ROBOTICS}
@@ -88,11 +114,12 @@
       \strng{authorbibnamehash}{b02a5af37c888e6fbf232653977f5da5}
       \strng{authornamehash}{b02a5af37c888e6fbf232653977f5da5}
       \strng{authorfullhash}{b02a5af37c888e6fbf232653977f5da5}
-      \field{sortinit}{K}
-      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Intelligent Transportation Systems}
+      \field{number}{6}
       \field{title}{Tracking of extended objects with high-resolution Doppler radar}
       \field{volume}{17}
       \field{year}{2015}
