@@ -111,7 +111,7 @@
     \setlength{\itemsep}{30pt}
     \item 	The need to specify \textbf{ground geometry}, its nature (e.g., slipping ground), but also the presence and nature of \textbf{dynamic objects} to adjust the cartography models and potentially to avoid it when path generation is produced.
     \item The \textbf{change in the environment} (change in luminosity, rain, fog, etc) does not always allow the use of the same sensors continusously. A choice in the sensors but also multisensor fusion, is consequently essential.
-    \item The \textbf{noisy nature of acquisition sensors} must be a the subject of careful consideration to bring robust information (possibly guarenteed using interval analysis) on which path generation can be based. The context of the described environment corresponds to applications such as construction or farming sites when vehicles evolve jointly with human operators, applications when the security is the top priority.
+    \item The \textbf{noisy nature of acquisition sensors} must be a the subject of careful consideration to bring robust information (possibly guarenteed using Interval Analysis) on which path generation can be based. The context of the described environment corresponds to applications such as construction or farming sites when vehicles evolve jointly with human operators, applications when the security is the top priority.
   \end{itemize}
   \end{block}
 
@@ -170,7 +170,7 @@
 
     \vspace{1.5cm}
 
-    So if the RADAR appears to be a cheap and robust sensors for hostile environment conditions it is complicated to use it without signal processing and/or without joining other sensors.~\cite{radarsurvey}
+    So if the RADAR appears to be a cheap and robust sensors for hostile environment conditions it is complicated to use it without signal processing and/or without joining other sensors~\cite{radarsurvey}.
 
     \end{block}
 
@@ -180,7 +180,7 @@
   % ── right column ───────────────────────────────
   \begin{column}{0.43\linewidth}
 
-	\begin{block}{An application of the radar benefit: The dynamic tracking}
+	\begin{block}{An application of the radar benefit: The guarenteed dynamic tracking}
       {
         Dynamic objects in environment need to be identified to 
 
@@ -206,7 +206,7 @@
 
         \vspace{0.5cm}
 
-        Classically, when range-azimuth sensors are used, dynamic object tracking is performed by comparison of multiple frame to be able to detect semi-static and high dynamicity. When Doppler velocity is found, instantaneous velocity, including angular speed, can be found with the Instantaneous Center of Rotation (ICR).~\cite{radartracking}
+        Classically, when range-azimuth sensors are used, dynamic object tracking is performed by comparison of multiple frame to be able to detect semi-static and high dynamicity. When Doppler velocity is found, instantaneous velocity, including angular speed, can be found with the Instantaneous Center of Rotation (ICR)~\cite{radartracking}. This kinematics parameters can be found using Interval Analysis taking into accound bounded RADAR noise.
       }
     \end{block}
 
@@ -219,12 +219,12 @@
   \vspace{0.5cm}
 
 	\begin{center}
-		\includegraphics[width=0.709\linewidth]{images/ICRretrieval.png}\\[4pt]
+		\includegraphics[width=0.685\linewidth]{images/ICRretrieval.png}\\[4pt]
 		{\small\itshape Figure 3. ICR and angular velocity retrieval with distribution of Doppler radial velocity.}
 	\end{center}
 
 	\begin{center}
-		\includegraphics[width=0.709\linewidth]{images/projection.png}\\[4pt]
+		\includegraphics[width=0.685\linewidth]{images/projection.png}\\[4pt]
 		{\small\itshape Figure 4. Current measured point projection with ICR and angular velocity estimation.}
 	\end{center}
 
