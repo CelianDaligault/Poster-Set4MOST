@@ -20,6 +20,8 @@
 \usepackage{tcolorbox}
 \usepackage{booktabs}
 
+\NoAutoSpaceBeforeFDP
+
 % ── Bibliography ────────────────────────────────────────────────
 \usepackage[backend=biber, sorting=none, style=numeric]{biblatex}
 \addbibresource{bibliography.bib}
@@ -111,7 +113,7 @@
     \setlength{\itemsep}{30pt}
     \item 	The need to specify \textbf{ground geometry}, its nature (e.g., slipping ground), but also the presence and nature of \textbf{dynamic objects} to adjust the cartography models and potentially to avoid it when path generation is produced.
     \item The \textbf{change in the environment} (change in luminosity, rain, fog, etc) does not always allow the use of the same sensors continusously. A choice in the sensors but also multisensor fusion, is consequently essential.
-    \item The \textbf{noisy nature of acquisition sensors} must be a the subject of careful consideration to bring robust information (possibly guarenteed using Interval Analysis ~\cite{interval}) on which path generation can be based. The context of the described environment corresponds to applications such as construction or farming sites when vehicles evolve jointly with human operators, applications when the security is the top priority.
+    \item The \textbf{noisy nature of acquisition sensors} must be a the subject of careful consideration to bring robust information (possibly guaranteed using Interval Analysis ~\cite{interval}) on which path generation can be based. The context of the described environment corresponds to applications such as construction or farming sites when vehicles evolve jointly with human operators, applications when the security is the top priority.
   \end{itemize}
   \end{block}
 
@@ -139,13 +141,13 @@
       \setlength{\itemsep}{15pt}
       \item Is less sensitive to signal attenuation in the atmosphere, allowing \textbf{higher maximum range and robustness} to weather conditions such as rain or fog.
       \item Return the \textbf{Doppler velocity} of obstacles.
-      \item Can possibly \textbf{go through matter} depending on the type of RADAR
-      \item Is \textbf{cheaper} than LiDAR, so attractive for industrial applications
+      \item Can possibly \textbf{go through matter} depending on the type of RADAR.
+      \item Is \textbf{cheaper} than LiDAR, so attractive for industrial applications.
     \end{itemize}
 
     \vspace{1.5cm}
 
-    However, the RADAR drawback also include disadvantages compared to the LiDAR:
+    However, RADAR also has some drawbacks when compared to LiDAR:
 
     \vspace{1.5cm}
     
@@ -170,7 +172,7 @@
 
     \vspace{2cm}
 
-    So if the RADAR appears to be a cheap and robust sensors for hostile environment conditions it is complicated to use it without signal processing and/or without joining other sensors~\cite{radarsurvey}.
+    So if the RADAR appears to be a cheap and robust sensors for hostile environment conditions, it is complicated to use it without signal processing and/or without joining other sensors~\cite{radarsurvey}.
 
     \end{block}
 
@@ -201,7 +203,7 @@
         \begin{itemize}
           \setlength{\itemsep}{15pt}
           \item Semi-static where the object does not change its position often (e.g., a door).
-          \item Highly dynamic where the object often move (e.g., a person).
+          \item Highly dynamic where the object often moves (e.g., a person).
         \end{itemize}
 
         \vspace{0.5cm}
@@ -242,7 +244,7 @@
 
     \begin{itemize}
       \setlength{\itemsep}{15pt}
-      \item How to estimate dynamic object shapes in a guarenteed way without making shape assumptions?
+      \item How to estimate dynamic object shapes in a guaranteed way without making shape assumptions?
       \item What to conclude of the observation of dynamic object trajectories inside a static map (e.g. Visibility, non traversability of objects)?
     \end{itemize}
     \end{tcolorbox}
