@@ -70,7 +70,7 @@
   \begin{column}{0.5\linewidth}
     \centering
     {\color{Rouge}\bfseries\Huge
-	Navigation in unknown off-road environment using Interval Analysis}\\[0.6cm]
+	Guaranteed navigation in unknown off-road environment}\\[0.6cm]
     {\large
       \textsc{Celian Daligault}$^1$$^2$,
       \textsc{Eric Lucet}$^2$,
@@ -100,12 +100,12 @@
 \begin{columns}[T]
 
   % ── Left column ───────────────────────────────
-  \begin{column}{0.53\linewidth}
+  \begin{column}{0.52\linewidth}
 
     \begin{block}{Context}
 	\textbf{Outdoor unknown off-road navigation stakes in mobile robotics applications are multiples:}
 
-  \vspace{0.5cm}
+  \vspace{1cm}
 
   \begin{itemize}
     \setlength{\itemsep}{30pt}
@@ -115,7 +115,7 @@
   \end{itemize}
   \end{block}
 
-    \vspace{0.5cm}
+    \vspace{1cm}
 
     	\begin{block}{A robust special sensor: The micro-wave RADAR}
 
@@ -157,18 +157,18 @@
 
     \end{column}
 
-    \begin{column}{0.35\linewidth}
+    \begin{column}{0.37\linewidth}
 
     \begin{center}
       \includegraphics[width=0.9\linewidth]{images/fmcw_power_spectrum_spatial.png}
-      {\small\itshape Figure 2. Exemple of RADAR output.}
+      {\small\itshape Figure 2. Example of RADAR output.}
     \end{center}
 
     \end{column}
 
     \end{columns}
 
-    \vspace{1.5cm}
+    \vspace{2cm}
 
     So if the RADAR appears to be a cheap and robust sensors for hostile environment conditions it is complicated to use it without signal processing and/or without joining other sensors~\cite{radarsurvey}.
 
@@ -180,7 +180,7 @@
   % ── right column ───────────────────────────────
   \begin{column}{0.43\linewidth}
 
-	\begin{block}{An application of the radar benefit: The guarenteed dynamic tracking}
+	\begin{block}{An application of the radar benefit: The guaranteed dynamic tracking}
       {
         Dynamic objects in environment need to be identified to 
 
@@ -206,7 +206,7 @@
 
         \vspace{0.5cm}
 
-        Classically, when range-azimuth sensors are used, dynamic object tracking is performed by comparison of multiple frame to be able to detect semi-static and high dynamicity. When Doppler velocity is found, instantaneous velocity, including angular speed, can be found with the Instantaneous Center of Rotation (ICR)~\cite{radartracking}. This kinematics parameters can be found using Interval Analysis taking into accound bounded RADAR noise.
+        Classically, when range-azimuth sensors are used, dynamic object tracking is performed by comparison of multiple frame to be able to detect semi-static and high dynamicity. When Doppler velocity is found, instantaneous velocity, including angular speed, can be found with the Instantaneous Center of Rotation (ICR)~\cite{radartracking}. This kinematics parameters can be found using Interval Analysis taking into account bounded RADAR noise.
       }
     \end{block}
 
@@ -219,12 +219,12 @@
   \vspace{0.5cm}
 
 	\begin{center}
-		\includegraphics[width=0.685\linewidth]{images/ICRretrieval.png}\\[4pt]
+		\includegraphics[width=0.73\linewidth]{images/ICRretrieval.png}\\[4pt]
 		{\small\itshape Figure 3. ICR and angular velocity retrieval with distribution of Doppler radial velocity.}
 	\end{center}
 
 	\begin{center}
-		\includegraphics[width=0.685\linewidth]{images/projection.png}\\[4pt]
+		\includegraphics[width=0.73\linewidth]{images/projection.png}\\[4pt]
 		{\small\itshape Figure 4. Current measured point projection with ICR and angular velocity estimation.}
 	\end{center}
 
