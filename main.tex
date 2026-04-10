@@ -69,10 +69,10 @@
     \includegraphics[width=1.5\linewidth]{images/logoLARIS.png}
   \end{column}
 
-  \begin{column}{0.5\linewidth}
+  \begin{column}{0.52\linewidth}
     \centering
     {\color{Rouge}\bfseries\Huge
-	Guaranteed navigation in unknown off-road environment}\\[0.6cm]
+	Guaranteed navigation in unknown off-road environments}\\[0.6cm]
     {\large
       \textsc{Celian Daligault}$^1$$^2$,
       \textsc{Eric Lucet}$^2$,
@@ -102,7 +102,7 @@
 \begin{columns}[T]
 
   % ── Left column ───────────────────────────────
-  \begin{column}{0.52\linewidth}
+  \begin{column}{0.515\linewidth}
 
     \begin{block}{Context}
 	\textbf{Outdoor unknown off-road navigation stakes in mobile robotics applications are multiples:}
@@ -111,9 +111,9 @@
 
   \begin{itemize}
     \setlength{\itemsep}{30pt}
-    \item 	The need to specify \textbf{ground geometry}, its nature (e.g., slipping ground), but also the presence and nature of \textbf{dynamic objects} to adjust the cartography models and potentially to avoid it when path generation is produced.
-    \item The \textbf{change in the environment} (change in luminosity, rain, fog, etc) does not always allow the use of the same sensors continusously. A choice in the sensors but also multisensor fusion, is consequently essential.
-    \item The \textbf{noisy nature of acquisition sensors} must be a the subject of careful consideration to bring robust information (possibly guaranteed using Interval Analysis ~\cite{interval}) on which path generation can be based. The context of the described environment corresponds to applications such as construction or farming sites when vehicles evolve jointly with human operators, applications when the security is the top priority.
+    \item The need to specify \textbf{ground geometry}, its nature (e.g., slippery ground), as well as the presence and nature of \textbf{dynamic objects} to adjust the mapping models and potentially to avoid them during path generation.
+    \item \textbf{Changes in the environment} (variations in luminosity, rain, fog, etc) do not always allow the continuous use of the same sensors. Therefore, sensors selection but also multi-sensor fusion, is essential.
+    \item The \textbf{noisy nature of acquisition sensors} must be the subject of careful consideration to provide robust information (possibly guaranteed using Interval Analysis ~\cite{interval}) on which path generation can be based. The context of the described environment corresponds to applications such as construction or farming sites where vehicles evolve jointly with human operators, applications where safety is the top priority.
   \end{itemize}
   \end{block}
 
@@ -124,12 +124,12 @@
       \vspace{0.8em}
       \begin{center}
         \includegraphics[width=1\linewidth]{images/Generalshema}\\[4pt]
-        {\small\itshape Figure 1. Overview of the radar integration in SLAM.}
+        {\small\itshape Figure 1. Overview of radar integration in SLAM.}
       \end{center}
 		
     \vspace{0.5cm}
 
-    Similar to the LiDAR, the RADAR is an electromagnetic-based active sensor, which returns the distance to an obstacle with the time of flight between signal transmission and reception. The difference is that the wave frequencies are in the Radio frequency area, between 3 MHz and 300 GHz (76 - 81 GHz for automotive RADAR), whereas LiDAR wave frequency is in the infrared area, approximately 10,000 times higher. This difference in wave frequency translates into the sensor's property where RADAR:
+    Similar to LiDAR, RADAR is an electromagnetic-based active sensor, that returns the distance to an obstacle using the time of flight between signal transmission and reception. The difference is that the wave frequencies lie in the radio-frequency range, between 3 MHz and 300 GHz (76 - 81 GHz for automotive RADAR), whereas LiDAR wave frequency operates in the infrared range, at approximately 10,000 times higher frequencies. This difference in wave frequency translates into sensor property where RADAR:
 
     \vspace{1.5cm}
 
@@ -139,10 +139,10 @@
 
     \begin{itemize}
       \setlength{\itemsep}{15pt}
-      \item Is less sensitive to signal attenuation in the atmosphere, allowing \textbf{higher maximum range and robustness} to weather conditions such as rain or fog.
-      \item Return the \textbf{Doppler velocity} of obstacles.
-      \item Can possibly \textbf{go through matter} depending on the type of RADAR.
-      \item Is \textbf{cheaper} than LiDAR, so attractive for industrial applications.
+      \item Is less sensitive to signal attenuation in the atmosphere, allowing \textbf{higher maximum range and greater robustness} to weather conditions such as rain or fog.
+      \item Returns the \textbf{Doppler velocity} of obstacles.
+      \item Can potentially \textbf{penetrate certain materials} depending on the type of RADAR.
+      \item Is \textbf{cheaper} than LiDAR, making it attractive for industrial applications.
     \end{itemize}
 
     \vspace{1.5cm}
@@ -153,8 +153,8 @@
     
     \begin{itemize}
       \setlength{\itemsep}{15pt}
-      \item The RADAR has a \textbf{poor accuracy} of detections compared to the LiDAR necessitating deeper noise consideration.
-      \item It has a \textbf{weak spatial resolution}, which makes it complicated to detect small detection for weak Radar Cross Section target (RCS) depending on shape, geometry and material.
+      \item RADAR has a \textbf{lower detection accuracy} compared to LiDAR requiring more careful noise modelling.
+      \item It has \textbf{low spatial resolution}, which makes it complicated to detect small detection for weak Radar Cross Section target (RCS) depending on shape, geometry and material.
     \end{itemize}
 
     \end{column}
@@ -172,7 +172,7 @@
 
     \vspace{2cm}
 
-    So if the RADAR appears to be a cheap and robust sensors for hostile environment conditions, it is complicated to use it without signal processing and/or without joining other sensors~\cite{radarsurvey}.
+    So, although RADAR appears to be a cheap and robust sensor for harsh environmental conditions, it is difficult to use without signal processing and/or without combining it with other sensors~\cite{radarsurvey}.
 
     \end{block}
 
@@ -184,31 +184,31 @@
 
 	\begin{block}{An application of the radar benefit: The guaranteed dynamic tracking}
       {
-        Dynamic objects in environment need to be identified to 
+        Dynamic objects in the environment need to be identified in order to 
 
         \vspace{0.5cm}
 
         \begin{itemize}
           \setlength{\itemsep}{15pt}
-          \item Remap correctly the map that has changed.
+          \item Correctly update the map when changes occur.
           \item Avoid dynamic obstacles.
         \end{itemize} 
 
         \vspace{0.5cm}
         
-        The dynamic obstacles are of two types:
+        Dynamic obstacles are of two types:
 
         \vspace{0.5cm}
 
         \begin{itemize}
           \setlength{\itemsep}{15pt}
-          \item Semi-static where the object does not change its position often (e.g., a door).
-          \item Highly dynamic where the object often moves (e.g., a person).
+          \item Semi-static objects does not change its position frequently (e.g., a door).
+          \item Highly dynamic objects, where the object moves frequently (e.g., a person).
         \end{itemize}
 
         \vspace{0.5cm}
 
-        Classically, when range-azimuth sensors are used, dynamic object tracking is performed by comparison of multiple frame to be able to detect semi-static and high dynamicity. When Doppler velocity is found, instantaneous velocity, including angular speed, can be found with the Instantaneous Center of Rotation (ICR)~\cite{radartracking}. This kinematics parameters can be found using Interval Analysis taking into account bounded RADAR noise.
+        Classically, when range-azimuth sensors are used, dynamic object tracking is performed by comparing multiple frames in order to detect both semi-static and highly dynamic behaviour. When Doppler velocity is available, instantaneous velocity, including angular speed, can be estimated with the Instantaneous Center of Rotation (ICR)~\cite{radartracking}. These kinematic parameters can be estimated using Interval Analysis taking into account bounded RADAR noise.
       }
     \end{block}
 
@@ -221,13 +221,13 @@
   \vspace{0.5cm}
 
 	\begin{center}
-		\includegraphics[width=0.685\linewidth]{images/ICRretrieval.png}\\[4pt]
-		{\small\itshape Figure 3. ICR and angular velocity retrieval with distribution of Doppler radial velocity.}
+		\includegraphics[width=0.611\linewidth]{images/ICRretrieval.png}\\[4pt]
+		{\small\itshape Figure 3. ICR and angular velocity estimation using of Doppler radial velocity distribution.}
 	\end{center}
 
 	\begin{center}
-		\includegraphics[width=0.685\linewidth]{images/projection.png}\\[4pt]
-		{\small\itshape Figure 4. Current measured point projection with ICR and angular velocity estimation.}
+		\includegraphics[width=0.611\linewidth]{images/projection.png}\\[4pt]
+		{\small\itshape Figure 4. Projection of measured points with ICR and angular velocity estimation.}
 	\end{center}
 
 	\vspace{0.5cm}
@@ -245,7 +245,7 @@
     \begin{itemize}
       \setlength{\itemsep}{15pt}
       \item How to estimate dynamic object shapes in a guaranteed way without making shape assumptions?
-      \item What to conclude of the observation of dynamic object trajectories inside a static map (e.g. Visibility, non traversability of objects)?
+      \item What can be conclude from the observation of dynamic object trajectories inside a static map (e.g. Visibility, non traversability of objects)?
     \end{itemize}
     \end{tcolorbox}
 
