@@ -105,7 +105,7 @@
   \begin{column}{0.515\linewidth}
 
     \begin{block}{Context}
-	\textbf{Outdoor unknown off-road navigation stakes in mobile robotics applications are multiples:}
+	\textbf{Outdoor unknown off-road navigation stakes in mobile robotics applications are multiple:}
 
   \vspace{1cm}
 
@@ -113,7 +113,7 @@
     \setlength{\itemsep}{30pt}
     \item The need to specify \textbf{ground geometry}, its nature (e.g., slippery ground), as well as the presence and nature of \textbf{dynamic objects} to adjust the mapping models and potentially to avoid them during path generation.
     \item \textbf{Changes in the environment} (variations in luminosity, rain, fog, etc) do not always allow the continuous use of the same sensors. Therefore, sensors selection but also multi-sensor fusion, is essential.
-    \item The \textbf{noisy nature of acquisition sensors} must be the subject of careful consideration to provide robust information (possibly guaranteed using Interval Analysis ~\cite{interval}) on which path generation can be based. The context of the described environment corresponds to applications such as construction or farming sites where vehicles evolve jointly with human operators, applications where safety is the top priority.
+    \item The \textbf{noisy nature of sensor acquisitions} must be the subject to careful consideration to provide robust information (possibly guaranteed using Interval Analysis ~\cite{interval}) on which path generation can be based. The context of the described environment corresponds to applications such as construction or farming sites where vehicles evolve jointly with human operators, applications where safety is the top priority.
   \end{itemize}
   \end{block}
 
@@ -202,13 +202,13 @@
 
         \begin{itemize}
           \setlength{\itemsep}{15pt}
-          \item Semi-static objects does not change its position frequently (e.g., a door).
-          \item Highly dynamic objects, where the object moves frequently (e.g., a person).
+          \item Semi-static objects whose positions do not change frequently (e.g., a door).
+          \item Highly dynamic objects which move frequently (e.g., a person).
         \end{itemize}
 
         \vspace{0.5cm}
 
-        Classically, when range-azimuth sensors are used, dynamic object tracking is performed by comparing multiple frames in order to detect both semi-static and highly dynamic behaviour. When Doppler velocity is available, instantaneous velocity, including angular speed, can be estimated with the Instantaneous Center of Rotation (ICR)~\cite{radartracking}. These kinematic parameters can be estimated using Interval Analysis taking into account bounded RADAR noise.
+        Classically, when range-azimuth sensors are used, dynamic object tracking is performed by comparing multiple frames in order to detect both semi-static and highly dynamic behaviours. When Doppler velocity is available, instantaneous velocity, including angular speed, can be estimated with the Instantaneous Center of Rotation (ICR)~\cite{radartracking}. These kinematic parameters can be estimated using Interval Analysis taking into account bounded RADAR noise.
       }
     \end{block}
 
@@ -221,12 +221,12 @@
   \vspace{0.5cm}
 
 	\begin{center}
-		\includegraphics[width=0.611\linewidth]{images/ICRretrieval.png}\\[4pt]
+		\includegraphics[width=0.636\linewidth]{images/ICRretrieval.png}\\[4pt]
 		{\small\itshape Figure 3. ICR and angular velocity estimation using of Doppler radial velocity distribution.}
 	\end{center}
 
 	\begin{center}
-		\includegraphics[width=0.611\linewidth]{images/projection.png}\\[4pt]
+		\includegraphics[width=0.636\linewidth]{images/projection.png}\\[4pt]
 		{\small\itshape Figure 4. Projection of measured points with ICR and angular velocity estimation.}
 	\end{center}
 
@@ -245,7 +245,7 @@
     \begin{itemize}
       \setlength{\itemsep}{15pt}
       \item How to estimate dynamic object shapes in a guaranteed way without making shape assumptions?
-      \item What can be conclude from the observation of dynamic object trajectories inside a static map (e.g. Visibility, non traversability of objects)?
+      \item What can be concluded from the observation of dynamic object trajectories inside a static map (e.g. Visibility, non traversability of objects)?
     \end{itemize}
     \end{tcolorbox}
 
