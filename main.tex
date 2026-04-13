@@ -102,7 +102,7 @@
 \begin{columns}[T]
 
   % ── Left column ───────────────────────────────
-  \begin{column}{0.515\linewidth}
+  \begin{column}{0.51\linewidth}
 
     \begin{block}{Context}
 	\textbf{Outdoor unknown off-road navigation stakes in mobile robotics applications are multiple:}
@@ -111,7 +111,7 @@
 
   \begin{itemize}
     \setlength{\itemsep}{30pt}
-    \item The need to specify \textbf{ground geometry}, its nature (e.g., slippery ground), as well as the presence and nature of \textbf{dynamic objects} to adjust the mapping models and potentially to avoid them during path generation.
+    \item The need to specify \textbf{ground geometry}, its nature (e.g., slippery ground), as well as the presence and nature of \textbf{dynamic objects} to adjust the mapping models and potentially to account for their avoidance in path generation.
     \item \textbf{Changes in the environment} (variations in luminosity, rain, fog, etc) do not always allow the continuous use of the same sensors. Therefore, sensors selection but also multi-sensor fusion, is essential.
     \item The \textbf{noisy nature of sensor acquisitions} must be the subject to careful consideration to provide robust information (possibly guaranteed using Interval Analysis ~\cite{interval}) on which path generation can be based. The context of the described environment corresponds to applications such as construction or farming sites where vehicles evolve jointly with human operators, applications where safety is the top priority.
   \end{itemize}
@@ -119,7 +119,7 @@
 
     \vspace{1cm}
 
-    	\begin{block}{A robust special sensor: The micro-wave RADAR}
+    	\begin{block}{A robust sensor: The micro-wave RADAR}
 
       \vspace{0.8em}
       \begin{center}
@@ -154,7 +154,7 @@
     \begin{itemize}
       \setlength{\itemsep}{15pt}
       \item RADAR has a \textbf{lower detection accuracy} compared to LiDAR requiring more careful noise modelling.
-      \item It has \textbf{low spatial resolution}, which makes it complicated to detect small detection for weak Radar Cross Section target (RCS) depending on shape, geometry and material.
+      \item Its \textbf{low spatial resolution} makes it complicated to detect weak Radar Cross Section target (RCS) depending on shape, geometry and material.
     \end{itemize}
 
     \end{column}
@@ -180,7 +180,7 @@
 
 
   % ── right column ───────────────────────────────
-  \begin{column}{0.43\linewidth}
+  \begin{column}{0.44\linewidth}
 
 	\begin{block}{An application of the radar benefit: The guaranteed dynamic tracking}
       {
@@ -208,7 +208,7 @@
 
         \vspace{0.5cm}
 
-        Classically, when range-azimuth sensors are used, dynamic object tracking is performed by comparing multiple frames in order to detect both semi-static and highly dynamic behaviours. When Doppler velocity is available, instantaneous velocity, including angular speed, can be estimated with the Instantaneous Center of Rotation (ICR)~\cite{radartracking}. These kinematic parameters can be estimated using Interval Analysis taking into account bounded RADAR noise.
+        Classically, when range-azimuth sensors are used, dynamic object tracking is performed by comparing multiple frames in order to detect both semi-static and highly dynamic behaviours. When Doppler velocity is available, instantaneous velocity, including angular speed, can be estimated with the Instantaneous Center of Rotation (ICR)~\cite{radartracking} allowing to predict the positions of measured points at the next time and update a geometrical map. These kinematic parameters can be estimated using Interval Analysis taking into account bounded RADAR noise.
       }
     \end{block}
 
@@ -221,12 +221,12 @@
   \vspace{0.5cm}
 
 	\begin{center}
-		\includegraphics[width=0.636\linewidth]{images/ICRretrieval.png}\\[4pt]
+		\includegraphics[width=0.59\linewidth]{images/ICRretrieval.png}\\[4pt]
 		{\small\itshape Figure 3. ICR and angular velocity estimation using of Doppler radial velocity distribution.}
 	\end{center}
 
 	\begin{center}
-		\includegraphics[width=0.636\linewidth]{images/projection.png}\\[4pt]
+		\includegraphics[width=0.59\linewidth]{images/projection.png}\\[4pt]
 		{\small\itshape Figure 4. Projection of measured points with ICR and angular velocity estimation.}
 	\end{center}
 
